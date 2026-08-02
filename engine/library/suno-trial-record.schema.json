@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Suno Intelligence trial record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["trial_id", "created_at", "brief_id", "capability_id", "model_or_mode", "prompt", "outcome", "listening_decision", "next_change"],
+  "properties": {
+    "trial_id": {"type": "string", "pattern": "^trial\\.[a-z0-9]+(?:[-.][a-z0-9]+)*$"},
+    "created_at": {"type": "string", "format": "date-time"},
+    "brief_id": {"type": "string", "pattern": "^brief\\."},
+    "capability_id": {"type": "string", "pattern": "^suno\\."},
+    "model_or_mode": {"type": "string", "minLength": 1},
+    "prompt": {"type": "string", "minLength": 1},
+    "lyrics_mode": {"enum": ["instrumental", "custom_lyrics", "remi", "none"]},
+    "style_controls": {"type": "object", "additionalProperties": {"type": ["string", "number", "boolean", "null"]}},
+    "output_references": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "outcome": {"enum": ["kept", "not_yet", "rejected", "repair_selected"]},
+    "listening_decision": {"type": "string", "minLength": 3},
+    "reason_tags": {"type": "array", "items": {"enum": ["foundation", "rhythm", "melody", "harmony", "arrangement", "voice_cast", "lyrics", "texture", "mix", "generic", "artifact", "hook"]}, "uniqueItems": true},
+    "artifact_observations": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["label", "time_range", "correction"], "properties": {"label": {"enum": ["filler_syllables", "pseudo_language", "unwanted_adlibs", "unintelligible_vocals", "unwanted_vocals", "generic_voice", "other"]}, "time_range": {"type": "string"}, "correction": {"type": "string", "minLength": 3}}}},
+    "next_change": {"type": "string", "minLength": 3}
+  }
+}
+
