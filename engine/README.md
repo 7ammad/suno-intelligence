@@ -50,3 +50,5 @@ Use `python engine/record_suno_trial.py` to append a reviewed Suno result—prom
 Use `python engine/generate_voice_cast.py` to create new semantic original voice roles from register, grain, delivery, distance, and arrangement role—never a named singer.
 
 Use `python engine/generate_sound_source.py` to create an original semantic sound-source role for Suno Sounds or arrangement, from material, gesture, decay, register, and role.
+
+Pass `--brief-dir <folder>` to `propose_composition_worlds.py` to emit a validated canonical brief JSON beside every proposed world.
