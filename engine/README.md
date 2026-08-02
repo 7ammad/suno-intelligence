@@ -48,3 +48,5 @@ Manual Suno runs become reusable evidence through the [trial-record schema](libr
 Use `python engine/record_suno_trial.py` to append a reviewed Suno result—prompt, model, output reference, artifact time ranges, listening verdict, and the exact next repair delta—without automating or mutating Suno.
 
 Use `python engine/generate_voice_cast.py` to create new semantic original voice roles from register, grain, delivery, distance, and arrangement role—never a named singer.
+
+Use `python engine/generate_sound_source.py` to create an original semantic sound-source role for Suno Sounds or arrangement, from material, gesture, decay, register, and role.
