@@ -112,3 +112,10 @@ take the next one.
 
 If you are interested in talking, please open an issue in this repository.
 
+## Working engine
+
+The project now includes a public-safe working reference engine in
+[`engine/`](engine/): a relationship-based composition-world proposer, a
+Suno-ready brief renderer with original multi-voice casting and artifact controls,
+and append-only listening-evidence capture. It is the actual creative core—not a
+mockup or a provider integration claim.
