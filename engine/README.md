@@ -38,3 +38,5 @@ The checked-in catalog contains role-level metadata and source pointers only: no
 The machine-readable [composition-brief v1.1 schema](library/composition-brief-v1.2.schema.json) retains the selected role map, original voice cast, lyric behavior, arrangement arc, avoid conditions, and artifact-diagnosis fields alongside the final prompt.
 
 The [official Suno capability map](library/suno-capabilities.json) covers creation, original Voices, Custom Models, Suno Sounds, editing, Add Vocals, Hooks, upload/album-art, and stem separation—with the exact run evidence each capability must retain.
+
+Query semantic records directly—for example: `python engine/query_library.py --kind voice --facet register=low --facet energy=contained`.
