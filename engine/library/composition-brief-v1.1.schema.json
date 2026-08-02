@@ -1,0 +1,129 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.sunolab/schemas/composition-brief-v1.1.json",
+  "title": "Suno Lab Composition Brief v1.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "brief_id",
+    "entry_path",
+    "title",
+    "instrumental",
+    "human_direction",
+    "composition_prompt",
+    "source_record_ids",
+    "rights_status",
+    "originality_constraints",
+    "human_approved"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.1"
+    },
+    "brief_id": {
+      "type": "string",
+      "pattern": "^brief\\.[a-z0-9]+(?:[-.][a-z0-9]+)*$"
+    },
+    "entry_path": {
+      "enum": [
+        "A_REFERENCE_DNA",
+        "B_GENRE_TRADITION_INSTRUMENT",
+        "C_ORIGINAL_INSTRUMENTAL",
+        "D_LYRIC_VOCAL",
+        "E_USER_OWNED_SEED"
+      ]
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200
+    },
+    "instrumental": {
+      "type": "boolean"
+    },
+    "human_direction": {
+      "type": "string",
+      "minLength": 20,
+      "maxLength": 5000
+    },
+    "composition_prompt": {
+      "type": "string",
+      "minLength": 20,
+      "maxLength": 5000
+    },
+    "lyrics": {
+      "type": ["string", "null"],
+      "maxLength": 20000
+    },
+    "language": {
+      "type": ["string", "null"],
+      "maxLength": 100
+    },
+    "duration_seconds": {
+      "type": ["number", "null"],
+      "exclusiveMinimum": 0,
+      "maximum": 3600
+    },
+    "source_record_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "maxItems": 100,
+      "items": {
+        "type": "string",
+        "pattern": "^(tradition|grammar|rhythm|bass|harmony|melody|form|instrument|sound_source|voice|lyric|surface|production|relationship|world|research_claim|production_pattern)\\.[a-z0-9]+(?:[-.][a-z0-9]+)*$"
+      }
+    },
+    "role_map": {
+      "type": "object",
+      "description": "Selected semantic-library IDs by composition role.",
+      "additionalProperties": false,
+      "properties": {
+        "grammar": {"type": "string"},
+        "foundation": {"type": "string"},
+        "timekeeper": {"type": "string"},
+        "harmony": {"type": "string"},
+        "melody": {"type": "string"},
+        "form": {"type": "string"},
+        "sound_sources": {"type": "array", "items": {"type": "string"}, "maxItems": 4},
+        "instruments": {"type": "array", "items": {"type": "string"}, "maxItems": 8}
+      }
+    },
+    "voice_cast": {
+      "type": ["object", "null"],
+      "description": "Original cast roles; required null for an intentional instrumental.",
+      "additionalProperties": false,
+      "properties": {
+        "lead": {"type": "string"},
+        "supporting": {"type": "array", "items": {"type": "string"}, "maxItems": 4},
+        "interaction": {"type": "array", "items": {"enum": ["answer", "shadow", "interrupt", "handoff", "widen"]}, "maxItems": 5}
+      }
+    },
+    "lyric_behavior_id": {"type": ["string", "null"]},
+    "arrangement_arc": {"type": "array", "items": {"type": "string", "minLength": 3, "maxLength": 500}, "minItems": 3, "maxItems": 8},
+    "avoid_conditions": {"type": "array", "items": {"type": "string", "minLength": 3, "maxLength": 300}, "maxItems": 20},
+    "artifact_protocol": {
+      "type": "array",
+      "description": "Observed or anticipated vocal/generation artifact labels to inspect after a run.",
+      "items": {"enum": ["filler_syllables", "pseudo_language", "unwanted_adlibs", "unintelligible_vocals", "unwanted_vocals", "generic_voice"]},
+      "uniqueItems": true
+    },
+    "rights_status": {
+      "enum": ["CLEARED", "UNKNOWN", "RESTRICTED"]
+    },
+    "originality_constraints": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 50,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 500
+      }
+    },
+    "human_approved": {
+      "type": "boolean"
+    }
+  }
+}
+
