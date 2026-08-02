@@ -18,6 +18,7 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import sys
 from pathlib import Path
 
 
@@ -132,6 +133,7 @@ new melody, new lyric if applicable, new structure, and a dated listening trial.
 
 
 def main() -> int:
+    sys.stdout.reconfigure(encoding="utf-8")
     root = Path(__file__).resolve().parents[1]
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--title", required=True)
