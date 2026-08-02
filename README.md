@@ -99,6 +99,10 @@ manual copying and let a creator's own history become usable creative context.
 - `docs/CREATOR_WORKFLOW.md` â€” the end-to-end creator journey.
 - `docs/OPEN_QUESTIONS_FOR_SUNO.md` â€” practical questions for the Suno team.
 
+## Working local prototype
+
+A first local creator console is now included at [`prototype/creator-console.html`](prototype/creator-console.html). It turns a creative seed into a composition brief, a manually attached Suno result, a keep/change/reject decision, content-stage readiness, and portable track/Social Family draft packages. It is intentionally local-first and carries no credentials or live-publish action.
+
 ## A note to the Suno team
 
 We are not asking for an autonomous music factory. We are asking for the
