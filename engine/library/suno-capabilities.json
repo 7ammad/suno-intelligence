@@ -1,0 +1,86 @@
+{
+  "schema_version": "1.0",
+  "checked_at": "2026-08-02",
+  "purpose": "Machine-readable official-product capability map for Suno Intelligence. Availability varies by plan, region, model, and rollout; every run must record observed availability.",
+  "capabilities": [
+    {
+      "id": "suno.custom_create",
+      "stage": "compose",
+      "inputs": ["composition_prompt", "lyrics_or_instrumental", "title", "advanced_controls"],
+      "outputs": ["candidate_tracks"],
+      "record": ["model", "style_prompt", "lyrics_mode", "sliders", "candidate_urls"],
+      "source": "https://help.suno.com/en/categories/550017"
+    },
+    {
+      "id": "suno.voices",
+      "stage": "cast",
+      "inputs": ["owned_voice_recording", "spoken_verification", "voice_profile", "lyrics", "style"],
+      "outputs": ["voice_profile", "two_voice_candidates"],
+      "record": ["voice_profile_id", "source_ownership", "verification_result", "model", "audio_influence", "vocal_outcome"],
+      "constraints": ["v5.5", "18_plus", "regional_availability"],
+      "source": "https://help.suno.com/en/articles/11362369"
+    },
+    {
+      "id": "suno.custom_models",
+      "stage": "personalize",
+      "inputs": ["at_least_six_owned_tracks"],
+      "outputs": ["private_custom_model"],
+      "record": ["model_id", "owned_track_set", "intent", "observed_delta"],
+      "constraints": ["Pro_or_Premier", "up_to_three", "private"],
+      "source": "https://help.suno.com/en/articles/11362497"
+    },
+    {
+      "id": "suno.sounds",
+      "stage": "sound_design",
+      "inputs": ["sound_prompt", "one_shot_or_loop", "bpm_optional", "key_optional"],
+      "outputs": ["two_audio_samples"],
+      "record": ["sound_source_id", "prompt", "type", "bpm", "key", "kept_sample"],
+      "constraints": ["experimental_beta"],
+      "source": "https://help.suno.com/en/articles/10625537"
+    },
+    {
+      "id": "suno.song_editor",
+      "stage": "repair_or_arrange",
+      "inputs": ["song", "section_or_time_range", "replacement_prompt_or_lyrics"],
+      "outputs": ["section_versions", "edited_song"],
+      "record": ["parent_song", "time_range", "operation", "prompt_delta", "selected_version"],
+      "source": "https://help.suno.com/en/articles/6141505"
+    },
+    {
+      "id": "suno.add_vocals",
+      "stage": "cast",
+      "inputs": ["instrumental_or_upload", "lyrics", "style", "audio_strength"],
+      "outputs": ["vocalized_candidate"],
+      "record": ["source_track", "lyrics", "style", "audio_strength", "vocal_outcome"],
+      "constraints": ["Pro_or_Premier", "beta"],
+      "source": "https://help.suno.com/en/articles/6882817"
+    },
+    {
+      "id": "suno.hooks",
+      "stage": "community",
+      "inputs": ["song", "start_point", "video", "show_lyrics_optional"],
+      "outputs": ["published_hook"],
+      "record": ["song_id", "start_time", "video_reference", "lyrics_visibility", "hook_url", "community_metrics"],
+      "source": "https://help.suno.com/en/articles/8049409"
+    },
+    {
+      "id": "suno.upload_audio_album_art",
+      "stage": "seed_and_identity",
+      "inputs": ["owned_audio_clip", "title", "album_art_prompt_or_image"],
+      "outputs": ["uploaded_seed", "album_art"],
+      "record": ["owned_source_reference", "duration", "title", "art_prompt_or_image_reference", "extension_point"],
+      "source": "https://help.suno.com/en/articles/2477633"
+    },
+    {
+      "id": "suno.advanced_stem_separation",
+      "stage": "analyze_or_repair",
+      "inputs": ["song", "split_mode", "instrument_choice_optional"],
+      "outputs": ["stems"],
+      "record": ["song_id", "split_mode", "requested_instrument", "stem_references", "quality_decision"],
+      "constraints": ["paid_feature", "tier_dependent", "may_not_label_or_extract_perfectly"],
+      "source": "https://help.suno.com/en/articles/12702337"
+    }
+  ],
+  "rule": "This map records what Suno documents, not a promise that the feature is live for a particular account. A manual run logs actual availability and result before a capability is treated as working for Hammad."
+}
+
