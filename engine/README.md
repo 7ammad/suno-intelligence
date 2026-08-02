@@ -34,3 +34,5 @@ python engine/record_listening_trial.py \
 Then add `--trials listening-trials.jsonl` to the proposer.
 
 The checked-in catalog contains role-level metadata and source pointers only: no private media, account data, raw prompts, credentials, or downloaded cultural archives.
+
+The machine-readable [composition-brief v1.1 schema](library/composition-brief-v1.1.schema.json) retains the selected role map, original voice cast, lyric behavior, arrangement arc, avoid conditions, and artifact-diagnosis fields alongside the final prompt.
