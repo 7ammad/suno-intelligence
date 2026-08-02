@@ -21,6 +21,11 @@ import re
 from pathlib import Path
 
 
+def default_catalog_path(root: Path) -> Path:
+    local_catalog = root / "library" / "catalog.json"
+    return local_catalog if local_catalog.exists() else root / "engine" / "library" / "catalog.json"
+
+
 def record_index(catalog_path: Path) -> dict[str, dict[str, object]]:
     catalog = json.loads(catalog_path.read_text(encoding="utf-8"))
     return {str(record["id"]): record for record in catalog["records"]}
@@ -144,7 +149,7 @@ def main() -> int:
     parser.add_argument("--supporting-voice", action="append", default=[], help="supporting original voice cast; may be repeated")
     parser.add_argument("--lyric")
     parser.add_argument("--avoid", action="append", default=[], help="generation artifact or behavior to avoid; may be repeated")
-    parser.add_argument("--catalog", type=Path, default=root / "library" / "catalog.json")
+    parser.add_argument("--catalog", type=Path, default=default_catalog_path(root))
     parser.add_argument("--output", type=Path)
     args = parser.parse_args()
     world = build_world(args, record_index(args.catalog))
