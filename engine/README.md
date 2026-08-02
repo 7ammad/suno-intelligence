@@ -46,3 +46,5 @@ Run `python engine/validate_library.py` to validate record IDs, archive provenan
 Manual Suno runs become reusable evidence through the [trial-record schema](library/suno-trial-record.schema.json) and [trial protocol](library/SUNO_TRIAL_PROTOCOL.md), including lyric, generic-voice, and unwanted-vocal-artifact diagnosis.
 
 Use `python engine/record_suno_trial.py` to append a reviewed Suno result—prompt, model, output reference, artifact time ranges, listening verdict, and the exact next repair delta—without automating or mutating Suno.
+
+Use `python engine/generate_voice_cast.py` to create new semantic original voice roles from register, grain, delivery, distance, and arrangement role—never a named singer.
