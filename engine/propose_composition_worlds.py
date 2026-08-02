@@ -62,8 +62,18 @@ def candidates(records: dict[str, dict[str, object]], by_kind: dict[str, list[di
         choice = lambda kind: by_kind[kind][ordinal % len(by_kind[kind])]
         endpoint = lambda kind: next((records[item] for item in sorted(endpoints) if records.get(item, {}).get("kind") == kind), None)
         voice_endpoints = [records[item] for item in sorted(endpoints) if records.get(item, {}).get("kind") == "voice"]
-        lead_voice = next((record for record in voice_endpoints if "chorus" not in str(record["title"]).lower() and "group" not in str(record["title"]).lower()), None)
-        lead_voice = lead_voice or (voice_endpoints[0] if voice_endpoints else by_kind["voice"][ordinal % len(by_kind["voice"])])
+        lead_pool = [record for record in by_kind["voice"] if record.get("composition_role") != "supporting_voice"]
+        lead_voice = next((record for record in voice_endpoints if record.get("composition_role") != "supporting_voice" and "chorus" not in str(record["title"]).lower() and "group" not in str(record["title"]).lower()), None)
+        lead_voice = lead_voice or (voice_endpoints[0] if voice_endpoints else lead_pool[ordinal % len(lead_pool)])
+        supporting = [record for record in voice_endpoints if record["id"] != lead_voice["id"]]
+        if not supporting:
+            support_pool = [
+                record for record in by_kind["voice"]
+                if record.get("composition_role") == "supporting_voice"
+                and record.get("register") != lead_voice.get("register")
+            ]
+            if support_pool:
+                supporting = [support_pool[ordinal % len(support_pool)]]
         world = {
             "relationship": relation,
             "grammar": endpoint("grammar") or choice("grammar"),
@@ -78,7 +88,7 @@ def candidates(records: dict[str, dict[str, object]], by_kind: dict[str, list[di
             "melody": choice("melody"),
             "form": choice("form"),
             "voice": lead_voice,
-            "supporting_voices": [record for record in voice_endpoints if record["id"] != lead_voice["id"]],
+            "supporting_voices": supporting,
             "lyric": by_kind["lyric"][ordinal % len(by_kind["lyric"])],
         }
         selected = [world["grammar"], world["foundation"], world["rhythm"], world["sound"], world["harmony"], world["melody"], world["form"], *world["instruments"], world["voice"], *world["supporting_voices"], world["lyric"]]
@@ -160,3 +170,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+
