@@ -61,6 +61,19 @@ def clean_avoidance(value: str) -> str:
     return cleaned
 
 
+def combination_evidence(index: dict[str, dict[str, object]], selected_ids: list[str]) -> tuple[str, list[str]]:
+    """Classify a combination without pretending every original mix is proven."""
+    selected = set(selected_ids)
+    matches: list[str] = []
+    for record in index.values():
+        if record.get("kind") != "relationship":
+            continue
+        endpoints = set(record.get("from_ids", [])) | set(record.get("to_ids", []))
+        if len(selected & endpoints) >= 2:
+            matches.append(str(record["id"]))
+    return ("EVIDENCED" if matches else "NOVEL_HYPOTHESIS", matches)
+
+
 def build_world(args: argparse.Namespace, index: dict[str, dict[str, object]]) -> str:
     grammar = resolve(index, args.grammar, "grammar")
     foundation = resolve(index, args.foundation, "bass")
@@ -95,6 +108,7 @@ def build_world(args: argparse.Namespace, index: dict[str, dict[str, object]]) -
     if supporting_line:
         voice_line += ". Supporting cast roles: " + supporting_line
     source_ids = sorted({sid for record in (grammar, foundation, rhythm, sound, harmony, melody, form, voice, lyric, *instruments, *supporting_voices) if record for sid in record.get("source_ids", [])})
+    evidence_status, evidence_ids = combination_evidence(index, ids)
     return f"""# {args.title}
 
 ## Original composition world
@@ -119,6 +133,8 @@ def build_world(args: argparse.Namespace, index: dict[str, dict[str, object]]) -
 **Instrument roles:** {', '.join(record['id'] + ' â€” ' + record['title'] for record in instruments) if instruments else 'none'}
 
 **Supporting casts:** {', '.join(record['id'] + ' â€” ' + record['title'] for record in supporting_voices) if supporting_voices else 'none'}
+
+**Combination evidence:** {evidence_status} â€” {', '.join(evidence_ids) if evidence_ids else 'no relationship record yet; treat this as a deliberate hypothesis and record the listening result'}
 
 ## Arrangement arc
 
@@ -153,6 +169,7 @@ def build_brief_payload(args: argparse.Namespace, index: dict[str, dict[str, obj
         *([args.lyric] if args.lyric else []),
     ]
     avoid_conditions = [line.strip() for line in re.search(r"\*\*Avoid:\*\* (.*)", world).group(1).split(",")]
+    evidence_status, evidence_ids = combination_evidence(index, source_ids)
     return {
         "schema_version": "1.1",
         "brief_id": "brief." + re.sub(r"[^a-z0-9]+", "-", args.title.lower()).strip("-"),
@@ -162,6 +179,8 @@ def build_brief_payload(args: argparse.Namespace, index: dict[str, dict[str, obj
         "human_direction": args.tension,
         "composition_prompt": provider_match.group(1).strip(),
         "source_record_ids": source_ids,
+        "combination_status": evidence_status,
+        "relationship_ids": evidence_ids,
         "role_map": {
             "grammar": args.grammar,
             "foundation": args.foundation,
