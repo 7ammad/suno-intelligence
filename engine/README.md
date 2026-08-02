@@ -42,3 +42,5 @@ The [official Suno capability map](library/suno-capabilities.json) covers creati
 Query semantic records directly—for example: `python engine/query_library.py --kind voice --facet register=low --facet energy=contained`.
 
 Run `python engine/validate_library.py` to validate record IDs, archive provenance pointers, semantic facets, and relationship endpoints before publishing a catalog.
+
+Manual Suno runs become reusable evidence through the [trial-record schema](library/suno-trial-record.schema.json) and [trial protocol](library/SUNO_TRIAL_PROTOCOL.md), including lyric, generic-voice, and unwanted-vocal-artifact diagnosis.
