@@ -16,7 +16,7 @@ It turns an explicit composition world into a renderer-ready brief without artis
 
 ```bash
 python engine/propose_composition_worlds.py \
-  --catalog engine/library/catalog-v1.1.json \
+  --catalog engine/library/catalog-v1.2.json \
   --count 5 \
   --output proposed-worlds.md
 ```
