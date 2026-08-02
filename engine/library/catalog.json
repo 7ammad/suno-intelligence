@@ -441,6 +441,15 @@
       "prompt_hint": ""
     },
     {
+      "id": "sound_source.air-column-fold",
+      "title": "Air-column fold",
+      "kind": "sound_source",
+      "state": "draft",
+      "source_ids": [],
+      "path": "sound-sources/air-column-fold.md",
+      "prompt_hint": ""
+    },
+    {
       "id": "sound_source.bowed-glass-horizon",
       "title": "Bowed glass horizon",
       "kind": "sound_source",
@@ -459,12 +468,30 @@
       "prompt_hint": ""
     },
     {
+      "id": "sound_source.charcoal-rub-spark",
+      "title": "Charcoal rub spark",
+      "kind": "sound_source",
+      "state": "draft",
+      "source_ids": [],
+      "path": "sound-sources/charcoal-rub-spark.md",
+      "prompt_hint": ""
+    },
+    {
       "id": "sound_source.magnetic-click-bloom",
       "title": "Magnetic click bloom",
       "kind": "sound_source",
       "state": "draft",
       "source_ids": [],
       "path": "sound-sources/magnetic-click-bloom.md",
+      "prompt_hint": ""
+    },
+    {
+      "id": "sound_source.wet-wire-tremor",
+      "title": "Wet wire tremor",
+      "kind": "sound_source",
+      "state": "draft",
+      "source_ids": [],
+      "path": "sound-sources/wet-wire-tremor.md",
       "prompt_hint": ""
     },
     {
