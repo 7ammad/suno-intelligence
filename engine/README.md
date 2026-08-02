@@ -40,3 +40,5 @@ The machine-readable [composition-brief v1.1 schema](library/composition-brief-v
 The [official Suno capability map](library/suno-capabilities.json) covers creation, original Voices, Custom Models, Suno Sounds, editing, Add Vocals, Hooks, upload/album-art, and stem separation—with the exact run evidence each capability must retain.
 
 Query semantic records directly—for example: `python engine/query_library.py --kind voice --facet register=low --facet energy=contained`.
+
+Run `python engine/validate_library.py` to validate record IDs, archive provenance pointers, semantic facets, and relationship endpoints before publishing a catalog.
