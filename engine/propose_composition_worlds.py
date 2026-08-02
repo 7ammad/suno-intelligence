@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
 from collections import defaultdict
 from pathlib import Path
 
@@ -126,6 +127,7 @@ def format_world(number: int, world: dict[str, object], args: argparse.Namespace
 
 
 def main() -> int:
+    sys.stdout.reconfigure(encoding="utf-8")
     root = Path(__file__).resolve().parents[1]
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--catalog", type=Path, default=default_catalog_path(root))
