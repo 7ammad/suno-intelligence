@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Suno Intelligence semantic composition model",
+  "version": "1.0.0",
+  "purpose": "A machine-readable vocabulary for agents to select, combine, critique, and learn from musical elements without storing or copying repertoire, melodies, recordings, or artist identities.",
+  "recordKinds": {
+    "tradition": {"use": "bounded contextual role logic only; never claim representation or authenticity"},
+    "grammar": {"use": "repeatable behavior across time, density, call/response, layer entry, or release"},
+    "rhythm": {"use": "pulse, subdivision, accent, silence, and propulsion role"},
+    "bass": {"use": "low-frequency anchor, motion, pressure, and harmonic relationship"},
+    "harmony": {"use": "tonal center, color, cadence pressure, and ambiguity"},
+    "melody": {"use": "contour, range, recurrence, handoff, and release"},
+    "form": {"use": "arrangement arc and state changes"},
+    "instrument": {"use": "acoustic or synthetic source role, articulation, register, and pairing"},
+    "sound_source": {"use": "original material behavior, not a named preset"},
+    "voice": {"use": "original cast role, register, texture, diction, and interaction; never impersonation"},
+    "lyric": {"use": "writing behavior, image logic, vocal space, and failure prevention"},
+    "production": {"use": "spatial, textural, dynamic, and mix behavior"},
+    "relationship": {"use": "explicit compatible, contrast, bridge, conflict, or counterweight evidence"},
+    "world": {"use": "original coherent destination assembled from other records"},
+    "suno_observation": {"use": "versioned observation of prompt behavior or a model artifact; not assumed fact"}
+  },
+  "facets": {
+    "composition_role": ["foundation", "timekeeper", "low_motion", "harmonic_field", "lead_line", "counterline", "structural_marker", "lead_voice", "supporting_voice", "texture", "transition", "release"],
+    "time_behavior": ["anchored", "cyclic", "interlocking", "elastic", "sparse", "accelerating", "decelerating", "withholding", "call_response"],
+    "pitch_behavior": ["pedal", "modal", "open_interval", "shifting_center", "contour_led", "atonal_color", "speech_like", "noise_pitch_blend"],
+    "register": ["sub", "low", "low_mid", "mid", "high_mid", "high", "full_spectrum"],
+    "density": ["single", "spare", "open", "layered", "dense", "saturated"],
+    "energy": ["still", "contained", "rolling", "driving", "urgent", "explosive", "dissolving"],
+    "material": ["wood", "skin", "metal", "reed", "string", "air", "voice", "glass", "wire", "water", "stone", "synthetic", "hybrid"],
+    "emotional_tension": ["grounded", "longing", "friction", "awe", "tenderness", "defiance", "suspense", "release", "euphoria", "unease"],
+    "interaction": ["reinforce", "answer", "shadow", "interrupt", "counterweight", "make_space", "handoff", "thicken", "thin", "withhold"]
+  },
+  "minimumComposition": {
+    "required_roles": ["foundation", "timekeeper", "harmonic_field", "lead_line", "form"],
+    "optional_roles": ["lead_voice", "supporting_voice", "texture", "transition"],
+    "required_checks": ["role_overlap", "arrangement_arc", "cultural_boundary", "artist_imitation_absent", "voice_identity_original", "lyric_space", "artifact_risk"]
+  },
+  "voiceCasting": {
+    "principle": "A cast is a set of original roles, not a celebrity or an instruction to imitate one.",
+    "fields": ["lead_or_support", "register", "grain", "diction", "phrasing", "emotional_distance", "layering_behavior", "language_constraints", "avoid"],
+    "cast_rules": ["Choose one lead role unless the form deliberately transfers leadership.", "Supporting voices must answer, shadow, widen, or interrupt; they may not merely double the lead.", "Assign a register separation or material contrast between simultaneous voices.", "Do not name living or historical singers as target voices."]
+  },
+  "lyricAndArtifactControls": {
+    "lyric_fields": ["point_of_view", "image_anchor", "line_length", "rhyme_pressure", "refrain_function", "vowel_shape", "silence_space", "language"],
+    "avoid": ["filler syllables", "invented pseudo-language", "unrequested chant loops", "automatic ad-libs", "generic inspirational abstractions", "unintelligible vocal ornament"],
+    "artifact_protocol": "If the generation produces unwanted wop-wop, gibberish, stray ad-libs, or unstable vocal artifacts, log the exact prompt, mode, lyric condition, timecode, and artifact label in a suno_observation. The next brief must specify the correction as an explicit avoid condition; it is not a musical element to normalize."
+  },
+  "combinationProtocol": {
+    "sequence": ["select listener promise and tension", "select foundation plus timekeeper", "select a grammar that determines movement", "add harmony, melody, and form", "cast voices or declare instrumental", "add one contrast or bridge material", "run required checks", "render Suno-ready brief"],
+    "relationship_types": ["compatibility", "contrast", "bridge", "conflict", "counterweight"],
+    "reject_when": ["two elements fight for the same structural role without a handoff", "a tradition is used as a label instead of bounded role logic", "a voice brief asks for an identifiable singer", "the arrangement has no state change", "the lyric behavior leaves no intelligible vocal space"]
+  },
+  "sunoPromptEvidence": {
+    "prompt_layers": ["creative intent", "foundation and rhythm", "harmonic/melodic behavior", "instrument and material roles", "voice cast or instrumental declaration", "arrangement arc", "lyric behavior", "explicit avoids"],
+    "observation_fields": ["suno_version_or_mode", "date", "prompt", "lyrics_mode", "source_record_ids", "output_reference", "kept_or_rejected", "reason_tags", "artifact_labels"],
+    "rule": "Treat model behavior as provisional until a repeatable observation has been recorded. Never convert folklore about prompting into a library fact."
+  },
+  "agentOutput": {
+    "must_include": ["selected_record_ids", "originality_statement", "combination_rationale", "arrangement_arc", "voice_cast_or_instrumental", "lyric_behavior", "avoid_list", "suno_ready_brief"],
+    "must_not_include": ["copied melody", "repertoire transcription", "artist imitation request", "unlicensed audio", "unsupported cultural authenticity claim"]
+  }
+}
+
