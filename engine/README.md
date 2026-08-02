@@ -3,12 +3,14 @@
 This is the public-safe reference implementation behind the proposal.
 
 It turns an explicit composition world into a renderer-ready brief without artist imitation:
-- relationship-grounded rhythm/bass/grammar selection;
-- harmony, melody, form, source and instrument roles;
-- a lead voice plus supporting vocal casts;
-- lyric behavior and explicit artifact avoidances;
-- an originality boundary and provenance IDs;
-- append-only human listening evidence that can rank later proposals.
+
+- relationship-grounded rhythm, bass, and temporal-grammar selection;
+- harmony, melody, form, sound-source, and instrument roles;
+- original lead and supporting voice casts—not named-singer imitation;
+- lyric behavior plus explicit controls for filler syllables, random `wop-wop`, unwanted ad-libs, and unintelligible vocals;
+- an originality boundary, provenance IDs, and append-only human listening evidence.
+
+`library/semantic-model.json` is the canonical agent contract. It gives every future agent the same music-role vocabulary, combination checks, voice-casting rules, lyric/artifact protocol, and Suno prompt-evidence fields. It is a framework for musical intelligence—not a database of copied melodies, audio, or artist styles.
 
 ## Run it
 
