@@ -80,6 +80,15 @@ def build_world(args: argparse.Namespace, index: dict[str, dict[str, object]]) -
         raise ValueError("each composition role must use a distinct library record")
     originality = require_originality(args.originality)
     avoidances = [clean_avoidance(value) for value in args.avoid]
+    if voice:
+        # These are generation-quality controls, not musical prohibitions. A
+        # future Suno observation can replace them with model-specific evidence.
+        avoidances.extend([
+            "unrequested ad-libs or chant loops",
+            "invented pseudo-language or filler syllables",
+            "unintelligible vocal artifacts",
+        ])
+    avoidances = list(dict.fromkeys(avoidances))
     supporting_line = "; ".join(hint(record) for record in supporting_voices)
     instrument_line = "; ".join(hint(record) for record in instruments)
     voice_line = hint(voice) if voice else "instrumental; no lead vocal"
@@ -132,6 +141,62 @@ new melody, new lyric if applicable, new structure, and a dated listening trial.
 """
 
 
+def build_brief_payload(args: argparse.Namespace, index: dict[str, dict[str, object]], world: str) -> dict[str, object]:
+    """Return the canonical, agent-readable companion to the Markdown brief."""
+    provider_match = re.search(r"## Provider-independent brief\n\n(.*?)(?=\n## )", world, re.DOTALL)
+    if not provider_match:
+        raise ValueError("generated world did not contain a provider-independent brief")
+    source_ids = [
+        args.grammar, args.foundation, args.rhythm, args.sound, args.harmony,
+        args.melody, args.form, *args.instrument,
+        *([args.voice] if args.voice else []), *args.supporting_voice,
+        *([args.lyric] if args.lyric else []),
+    ]
+    avoid_conditions = [line.strip() for line in re.search(r"\*\*Avoid:\*\* (.*)", world).group(1).split(",")]
+    return {
+        "schema_version": "1.1",
+        "brief_id": "brief." + re.sub(r"[^a-z0-9]+", "-", args.title.lower()).strip("-"),
+        "entry_path": "C_ORIGINAL_INSTRUMENTAL" if not args.voice else "D_LYRIC_VOCAL",
+        "title": args.title,
+        "instrumental": not bool(args.voice),
+        "human_direction": args.tension,
+        "composition_prompt": provider_match.group(1).strip(),
+        "source_record_ids": source_ids,
+        "role_map": {
+            "grammar": args.grammar,
+            "foundation": args.foundation,
+            "timekeeper": args.rhythm,
+            "harmony": args.harmony,
+            "melody": args.melody,
+            "form": args.form,
+            "sound_sources": [args.sound],
+            "instruments": args.instrument,
+        },
+        "voice_cast": None if not args.voice else {
+            "lead": args.voice,
+            "supporting": args.supporting_voice,
+            "interaction": ["answer" for _ in args.supporting_voice],
+        },
+        "lyric_behavior_id": args.lyric,
+        "arrangement_arc": [
+            "establish foundation with space around the first rhythmic gestures",
+            "trigger the first density shift through the selected grammar",
+            "introduce the sound source as a contrasting horizon or afterimage",
+            "resolve by removing a role or changing the time field",
+        ],
+        "avoid_conditions": avoid_conditions,
+        "artifact_protocol": [] if not args.voice else [
+            "filler_syllables", "pseudo_language", "unwanted_adlibs", "unintelligible_vocals",
+        ],
+        "lyrics": None,
+        "language": None,
+        "duration_seconds": None,
+        "rights_status": "UNKNOWN",
+        "originality_constraints": [args.originality, "No artist imitation or traditional repertoire reproduction."],
+        "human_approved": False,
+    }
+
+
 def main() -> int:
     sys.stdout.reconfigure(encoding="utf-8")
     root = Path(__file__).resolve().parents[1]
@@ -153,8 +218,10 @@ def main() -> int:
     parser.add_argument("--avoid", action="append", default=[], help="generation artifact or behavior to avoid; may be repeated")
     parser.add_argument("--catalog", type=Path, default=default_catalog_path(root))
     parser.add_argument("--output", type=Path)
+    parser.add_argument("--brief-json", type=Path, help="write a canonical v1.1 composition brief JSON alongside the human-readable world")
     args = parser.parse_args()
-    world = build_world(args, record_index(args.catalog))
+    index = record_index(args.catalog)
+    world = build_world(args, index)
     if args.output:
         if args.output.exists():
             raise FileExistsError(f"refusing to overwrite: {args.output}")
@@ -163,8 +230,15 @@ def main() -> int:
         print(args.output)
     else:
         print(world)
+    if args.brief_json:
+        if args.brief_json.exists():
+            raise FileExistsError(f"refusing to overwrite: {args.brief_json}")
+        args.brief_json.parent.mkdir(parents=True, exist_ok=True)
+        args.brief_json.write_text(json.dumps(build_brief_payload(args, index, world), indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+        print(args.brief_json)
     return 0
 
 
 if __name__ == "__main__":
     raise SystemExit(main())
+
