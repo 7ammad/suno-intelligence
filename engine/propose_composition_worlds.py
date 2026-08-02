@@ -13,7 +13,7 @@ import sys
 from collections import defaultdict
 from pathlib import Path
 
-from generate_composition_world import build_world, default_catalog_path
+from generate_composition_world import build_brief_payload, build_world, default_catalog_path
 
 
 ROLE_KINDS = ("grammar", "bass", "rhythm", "sound_source", "harmony", "melody", "form")
@@ -97,10 +97,8 @@ def candidates(records: dict[str, dict[str, object]], by_kind: dict[str, list[di
     return sorted(worlds, key=lambda world: int(world["taste_score"]), reverse=True)
 
 
-def format_world(number: int, world: dict[str, object], args: argparse.Namespace, records: dict[str, dict[str, object]]) -> str:
-    r = world["relationship"]
-    avoidances = args.avoid or ["generic choir pad", "wop-wop syllable loops"]
-    brief_args = argparse.Namespace(
+def make_brief_args(number: int, world: dict[str, object], args: argparse.Namespace) -> argparse.Namespace:
+    return argparse.Namespace(
         title=f"{args.title_prefix} {number}",
         tension=args.tension,
         originality=args.originality,
@@ -115,11 +113,16 @@ def format_world(number: int, world: dict[str, object], args: argparse.Namespace
         voice=world["voice"]["id"],
         supporting_voice=[record["id"] for record in world["supporting_voices"]],
         lyric=world["lyric"]["id"],
-        avoid=avoidances,
+        avoid=args.avoid or ["generic choir pad", "wop-wop syllable loops"],
     )
+
+
+def format_world(number: int, world: dict[str, object], args: argparse.Namespace, records: dict[str, dict[str, object]]) -> tuple[str, dict[str, object]]:
+    r = world["relationship"]
+    brief_args = make_brief_args(number, world, args)
     rendered = build_world(brief_args, records)
     prompt = rendered.split("## Provider-independent brief\n\n", 1)[1].split("\n\n## Provenance boundary", 1)[0]
-    return "\n".join([
+    markdown = "\n".join([
         f"## {number}. {r['title']}",
         f"**Why this holds together:** {r.get('relation_type', 'explicit relationship')} between {', '.join(r.get('from_ids', []))} and {', '.join(r.get('to_ids', []))}.",
         "",
@@ -134,6 +137,7 @@ def format_world(number: int, world: dict[str, object], args: argparse.Namespace
         "",
         "**Suno-ready brief:** " + prompt,
     ])
+    return markdown, build_brief_payload(brief_args, records, rendered)
 
 
 def main() -> int:
@@ -148,6 +152,7 @@ def main() -> int:
     parser.add_argument("--avoid", action="append", default=[])
     parser.add_argument("--trials", type=Path, help="optional append-only listening-trial JSONL")
     parser.add_argument("--output", type=Path)
+    parser.add_argument("--brief-dir", type=Path, help="write one canonical v1.2 brief JSON per proposal")
     args = parser.parse_args()
     records, by_kind = index_records(args.catalog)
     missing = [kind for kind in (*ROLE_KINDS, "voice", "lyric") if not by_kind[kind]]
@@ -156,7 +161,8 @@ def main() -> int:
     proposed = candidates(records, by_kind, taste_scores(args.trials))[:args.count]
     if not proposed:
         raise ValueError("cannot propose worlds; add an explicit relationship record")
-    result = "# Proposed composition worlds\n\n" + "\n\n".join(format_world(number, world, args, records) for number, world in enumerate(proposed, 1)) + "\n"
+    rendered = [format_world(number, world, args, records) for number, world in enumerate(proposed, 1)]
+    result = "# Proposed composition worlds\n\n" + "\n\n".join(markdown for markdown, _ in rendered) + "\n"
     if args.output:
         if args.output.exists():
             raise FileExistsError(f"refusing to overwrite: {args.output}")
@@ -165,6 +171,14 @@ def main() -> int:
         print(args.output)
     else:
         print(result)
+    if args.brief_dir:
+        args.brief_dir.mkdir(parents=True, exist_ok=True)
+        for _, brief in rendered:
+            target = args.brief_dir / f"{brief['brief_id']}.json"
+            if target.exists():
+                raise FileExistsError(f"refusing to overwrite: {target}")
+            target.write_text(json.dumps(brief, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+        print(args.brief_dir)
     return 0
 
 
