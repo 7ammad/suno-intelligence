@@ -1,0 +1,870 @@
+{
+  "version": "1.0",
+  "records": [
+    {
+      "id": "bass.gong-ageng-structural-gravity",
+      "title": "Low end as structural gravity",
+      "kind": "bass",
+      "state": "SOURCED",
+      "source_ids": [
+        "archive.web-sumarsam-introduction-javanese-gamelan",
+        "archive.web-sumarsam-theorizing-gamelan"
+      ],
+      "path": "bass/gong-ageng-structural-gravity.md",
+      "prompt_hint": ""
+    },
+    {
+      "id": "bass.guembri-rhythmic-melody",
+      "title": "Low foundation as rhythmic melody",
+      "kind": "bass",
+      "state": "SOURCED",
+      "source_ids": [
+        "archive.web-umbc-kapchan-gnawa",
+        "archive.web-ucla-gnawa"
+      ],
+      "path": "bass/guembri-rhythmic-melody.md",
+      "prompt_hint": ""
+    },
+    {
+      "id": "form.interrupted-bloom",
+      "title": "Interrupted bloom",
+      "kind": "form",
+      "state": "draft",
+      "source_ids": [],
+      "path": "form/interrupted-bloom.md",
+      "prompt_hint": "interrupted build, early withdrawal into intimacy, one later altered bloom, no EDM drop, authored final turn"
+    },
+    {
+      "id": "form.reveal-withdraw-return",
+      "title": "Reveal, withdraw, return",
+      "kind": "form",
+      "state": "draft",
+      "source_ids": [],
+      "path": "form/reveal-withdraw-return.md",
+      "prompt_hint": "selective reveal and withdrawal, identity through absence, transformed return, clear section contrast, no wall-of-sound escalation"
+    },
+    {
+      "id": "form.slow-ignition-open-exit",
+      "title": "Slow ignition, open exit",
+      "kind": "form",
+      "state": "draft",
+      "source_ids": [],
+      "path": "form/slow-ignition-open-exit.md",
+      "prompt_hint": "slowly revealed arrangement, modest earned peak, open unresolved exit, remove a role at the end, no fadeout"
+    },
+    {
+      "id": "form.spiral-return-different-height",
+      "title": "Spiral return at a different height",
+      "kind": "form",
+      "state": "draft",
+      "source_ids": [],
+      "path": "form/spiral-return-different-height.md",
+      "prompt_hint": "spiral form, opening motif returns at new register and density, familiar material with altered emotional weight, no copy-paste chorus"
+    },
+    {
+      "id": "grammar.counted-return-architecture",
+      "title": "Counted return architecture",
+      "kind": "grammar",
+      "state": "draft",
+      "source_ids": [
+        "archive.web-smithsonian-tabla-lessons"
+      ],
+      "path": "grammars/counted-return-architecture.md",
+      "prompt_hint": "clear recurring structural arrival, evolving inner rhythmic density, low anchor stays legible, composed return point, no copied percussion pattern"
+    },
+    {
+      "id": "grammar.drum-conducted-density-arc",
+      "title": "Drum-conducted density arc",
+      "kind": "grammar",
+      "state": "sourced",
+      "source_ids": [
+        "archive.web-sumarsam-introduction-javanese-gamelan",
+        "archive.web-sumarsam-theorizing-gamelan"
+      ],
+      "path": "grammars/drum-conducted-density-arc.md",
+      "prompt_hint": ""
+    },
+    {
+      "id": "grammar.interlocking-lanes-open-center",
+      "title": "Interlocking lanes, open center",
+      "kind": "grammar",
+      "state": "sourced",
+      "source_ids": [
+        "archive.web-smithsonian-ewe-music-ghana"
+      ],
+      "path": "grammars/interlocking-lanes-open-center.md",
+      "prompt_hint": ""
+    },
+    {
+      "id": "grammar.rotating-vocal-function-field",
+      "title": "Rotating vocal-function field",
+      "kind": "grammar",
+      "state": "sourced",
+      "source_ids": [
+        "archive.web-unesco-aka-polyphony"
+      ],
+      "path": "grammars/rotating-vocal-function-field.md",
+      "prompt_hint": ""
+    },
+    {
+      "id": "grammar.statement-answer-threshold",
+      "title": "Statement, answer, threshold",
+      "kind": "grammar",
+      "state": "sourced",
+      "source_ids": [
+        "archive.web-unesco-alardah-alnajdiyah"
+      ],
+      "path": "grammars/statement-answer-threshold.md",
+      "prompt_hint": ""
+    },
+    {
+      "id": "grammar.steady-grid-moving-low-counterpoint",
+      "title": "Steady-grid moving-low counterpoint",
+      "kind": "grammar",
+      "state": "sourced",
+      "source_ids": [
+        "archive.web-umbc-kapchan-gnawa"
+      ],
+      "path": "grammars/steady-grid-moving-low-counterpoint.md",
+      "prompt_hint": ""
+    },
+    {
+      "id": "harmony.minor-major-afterglow",
+      "title": "Minor-major afterglow",
+      "kind": "harmony",
+      "state": "draft",
+      "source_ids": [],
+      "path": "harmony/minor-major-afterglow.md",
+      "prompt_hint": "minor-centered field, one quiet major-color afterglow after phrase endings, intimate unresolved warmth, no triumphant chorus"
+    },
+    {
+      "id": "harmony.open-fifth-shifting-shadow",
+      "title": "Open fifth with a shifting shadow note",
+      "kind": "harmony",
+      "state": "draft",
+      "source_ids": [],
+      "path": "harmony/open-fifth-shifting-shadow.md",
+      "prompt_hint": "open fifth foundation, one shifting upper color note per section, suspended harmony, no four-chord loop"
+    },
+    {
+      "id": "harmony.pedal-center-deferred-color",
+      "title": "Pedal center with deferred color",
+      "kind": "harmony",
+      "state": "draft",
+      "source_ids": [],
+      "path": "harmony/pedal-center-deferred-color.md",
+      "prompt_hint": "open pedal center, deferred harmonic color, late emotional reveal, sparse upper tones, avoid predictable four-chord loop"
+    },
+    {
+      "id": "harmony.two-center-slow-tilt",
+      "title": "Two-center slow tilt",
+      "kind": "harmony",
+      "state": "draft",
+      "source_ids": [],
+      "path": "harmony/two-center-slow-tilt.md",
+      "prompt_hint": "two tonal centers, slow harmonic tilt, bass favors one home then melody reveals another, unresolved but intentional ending"
+    },
+    {
+      "id": "hypothesis.embers-under-wide-sky.v1",
+      "title": "Embers Under a Wide Sky",
+      "kind": "creative_hypothesis",
+      "state": "RESEARCHED",
+      "source_ids": [],
+      "path": "hypotheses/embers-under-wide-sky.v1.md",
+      "prompt_hint": ""
+    },
+    {
+      "id": "hypothesis.the-room-learns-to-breathe.v1",
+      "title": "The Room Learns to Breathe",
+      "kind": "creative_hypothesis",
+      "state": "RESEARCHED",
+      "source_ids": [],
+      "path": "hypotheses/the-room-learns-to-breathe.v1.md",
+      "prompt_hint": ""
+    },
+    {
+      "id": "hypothesis.two-gravities-one-horizon.v1",
+      "title": "Two Gravities, One Horizon",
+      "kind": "creative_hypothesis",
+      "state": "RESEARCHED",
+      "source_ids": [],
+      "path": "hypotheses/two-gravities-one-horizon.v1.md",
+      "prompt_hint": ""
+    },
+    {
+      "id": "instrument.gong-ageng",
+      "title": "Gong ageng - rare low structural arrival",
+      "kind": "instrument",
+      "state": "VERIFIED",
+      "source_ids": [
+        "archive.web-sumarsam-introduction-javanese-gamelan",
+        "archive.web-sumarsam-theorizing-gamelan"
+      ],
+      "path": "instruments/gong-ageng.md",
+      "prompt_hint": ""
+    },
+    {
+      "id": "instrument.guembri",
+      "title": "Guembri - low plucked rhythmic-melodic voice",
+      "kind": "instrument",
+      "state": "VERIFIED",
+      "source_ids": [
+        "archive.web-umbc-kapchan-gnawa",
+        "archive.web-ucla-gnawa"
+      ],
+      "path": "instruments/guembri.md",
+      "prompt_hint": ""
+    },
+    {
+      "id": "instrument.kendhang-central-javanese",
+      "title": "Kendhang - temporal and density leadership",
+      "kind": "instrument",
+      "state": "VERIFIED",
+      "source_ids": [
+        "archive.web-sumarsam-introduction-javanese-gamelan",
+        "archive.web-sumarsam-theorizing-gamelan"
+      ],
+      "path": "instruments/kendhang-central-javanese.md",
+      "prompt_hint": ""
+    },
+    {
+      "id": "instrument.ney-end-blown-reed-flute",
+      "title": "Ney / nÄy end-blown reed flute â€” bounded role profile",
+      "kind": "instrument",
+      "state": "reviewed",
+      "source_ids": [
+        "archive.web-smithsonian-turkish-ney",
+        "archive.web-met-ney"
+      ],
+      "path": "instruments/ney-end-blown-reed-flute.md",
+      "prompt_hint": "breath-forward end-blown reed flute, sparse exposed melodic contour, dry air around a low rhythmic foundation, long pauses between phrases"
+    },
+    {
+      "id": "instrument.qraqeb",
+      "title": "Qraqeb - heavy metal castanet time layer",
+      "kind": "instrument",
+      "state": "VERIFIED",
+      "source_ids": [
+        "archive.web-umbc-kapchan-gnawa",
+        "archive.web-ucla-gnawa"
+      ],
+      "path": "instruments/qraqeb.md",
+      "prompt_hint": ""
+    },
+    {
+      "id": "lyric.image-anchor-sparse-line",
+      "title": "Image-anchor sparse line",
+      "kind": "lyric",
+      "state": "draft",
+      "source_ids": [],
+      "path": "lyrics/image-anchor-sparse-line.md",
+      "prompt_hint": "sparse image-led lyrics, one concrete image per line, clear diction, room between phrases, no filler syllables, no generic inspirational slogans"
+    },
+    {
+      "id": "lyric.vowel-release-hook",
+      "title": "Vowel-release hook",
+      "kind": "lyric",
+      "state": "draft",
+      "source_ids": [],
+      "path": "lyrics/vowel-release-hook.md",
+      "prompt_hint": "short clear refrain, sustained final vowel, rhythmic gap before the hook, no nonsense syllables, no automatic ad-libs, selective octave response"
+    },
+    {
+      "id": "melody.contour-handoff",
+      "title": "Contour handoff between low motif and upper line",
+      "kind": "melody",
+      "state": "draft",
+      "source_ids": [],
+      "path": "melody/contour-handoff.md",
+      "prompt_hint": "low motif establishes a contour, upper melody inherits only its directional shape with new intervals and rhythm, call and transformation, no literal repeat"
+    },
+    {
+      "id": "melody.descending-question-late-answer",
+      "title": "Descending question, late answer",
+      "kind": "melody",
+      "state": "draft",
+      "source_ids": [],
+      "path": "melody/descending-question-late-answer.md",
+      "prompt_hint": "descending unfinished vocal motif, delayed upward answer after silence, asymmetric phrase lengths, no hook repetition every bar"
+    },
+    {
+      "id": "melody.three-note-rubbed-edge",
+      "title": "Three-note rubbed edge",
+      "kind": "melody",
+      "state": "draft",
+      "source_ids": [],
+      "path": "melody/three-note-rubbed-edge.md",
+      "prompt_hint": "three-note evolving motif, shifted accents, altered final interval each return, exposed pauses, no repetitive chant"
+    },
+    {
+      "id": "melody.upward-breath-fallaway",
+      "title": "Upward breath, fallaway tail",
+      "kind": "melody",
+      "state": "draft",
+      "source_ids": [],
+      "path": "melody/upward-breath-fallaway.md",
+      "prompt_hint": "upward breath-led phrase, falling unresolved tail, widening phrase length across sections, no big belted chorus"
+    },
+    {
+      "id": "surface.layered-resonant-field",
+      "title": "Layered resonant field with density lanes",
+      "kind": "surface",
+      "state": "SOURCED",
+      "source_ids": [
+        "archive.web-unesco-gamelan",
+        "archive.web-sumarsam-theorizing-gamelan"
+      ],
+      "path": "production/layered-resonant-field.md",
+      "prompt_hint": ""
+    },
+    {
+      "id": "surface.metallic-pulse-halo",
+      "title": "Metallic pulse halo",
+      "kind": "surface",
+      "state": "SOURCED",
+      "source_ids": [
+        "archive.web-umbc-kapchan-gnawa",
+        "archive.web-ucla-gnawa"
+      ],
+      "path": "production/metallic-pulse-halo.md",
+      "prompt_hint": ""
+    },
+    {
+      "id": "relation.drum-to-structural-gravity",
+      "title": "Drum-led density resolving into rare low structural gravity",
+      "kind": "relationship",
+      "state": "SOURCED",
+      "source_ids": [
+        "archive.web-sumarsam-introduction-javanese-gamelan",
+        "archive.web-sumarsam-theorizing-gamelan"
+      ],
+      "path": "relationships/drum-to-structural-gravity.md",
+      "prompt_hint": "",
+      "relation_type": "COMPATIBILITY",
+      "from_ids": [
+        "rhythm.kendhang-temporal-guidance"
+      ],
+      "to_ids": [
+        "bass.gong-ageng-structural-gravity",
+        "surface.layered-resonant-field"
+      ]
+    },
+    {
+      "id": "relation.foundation-to-horizon",
+      "title": "Bridge from active low foundation to sparse structural gravity",
+      "kind": "relationship",
+      "state": "SEEDED",
+      "source_ids": [
+        "archive.web-umbc-kapchan-gnawa",
+        "archive.web-sumarsam-theorizing-gamelan"
+      ],
+      "path": "relationships/foundation-to-horizon.md",
+      "prompt_hint": "",
+      "relation_type": "BRIDGE",
+      "from_ids": [
+        "bass.guembri-rhythmic-melody",
+        "rhythm.qraqeb-steady-metal-grid"
+      ],
+      "to_ids": [
+        "bass.gong-ageng-structural-gravity",
+        "rhythm.kendhang-temporal-guidance"
+      ]
+    },
+    {
+      "id": "relation.interlocking-lanes-tactile-low",
+      "title": "Moving low pulse with tactile object answer and open melodic center",
+      "kind": "relationship",
+      "state": "sourced",
+      "source_ids": [
+        "archive.web-smithsonian-ewe-music-ghana"
+      ],
+      "path": "relationships/interlocking-lanes-tactile-low.md",
+      "prompt_hint": "",
+      "relation_type": "compatibility",
+      "from_ids": [
+        "grammar.interlocking-lanes-open-center",
+        "bass.guembri-rhythmic-melody"
+      ],
+      "to_ids": [
+        "sound_source.magnetic-click-bloom",
+        "sound_source.breath-granule-rain"
+      ]
+    },
+    {
+      "id": "relation.offgrid-gesture-against-low-anchor",
+      "title": "Light off-grid gesture against a stable low anchor",
+      "kind": "relationship",
+      "state": "draft",
+      "source_ids": [
+        "archive.web-smithsonian-cuban-sones"
+      ],
+      "path": "relationships/offgrid-gesture-against-low-anchor.md",
+      "prompt_hint": "",
+      "relation_type": "contrast",
+      "from_ids": [
+        "bass.guembri-rhythmic-melody",
+        "grammar.counted-return-architecture"
+      ],
+      "to_ids": [
+        "sound_source.magnetic-click-bloom",
+        "melody.upward-breath-fallaway"
+      ]
+    },
+    {
+      "id": "relation.plucked-low-metal-time",
+      "title": "Plucked low motif against a steady metal time layer",
+      "kind": "relationship",
+      "state": "SOURCED",
+      "source_ids": [
+        "archive.web-umbc-kapchan-gnawa"
+      ],
+      "path": "relationships/plucked-low-metal-time.md",
+      "prompt_hint": "",
+      "relation_type": "COMPATIBILITY",
+      "from_ids": [
+        "bass.guembri-rhythmic-melody"
+      ],
+      "to_ids": [
+        "rhythm.qraqeb-steady-metal-grid",
+        "surface.metallic-pulse-halo"
+      ]
+    },
+    {
+      "id": "relation.rotating-vocal-field",
+      "title": "Lead, answer, and wordless shadow exchange positions",
+      "kind": "relationship",
+      "state": "sourced",
+      "source_ids": [
+        "archive.web-unesco-aka-polyphony"
+      ],
+      "path": "relationships/rotating-vocal-field.md",
+      "prompt_hint": "",
+      "relation_type": "compatibility",
+      "from_ids": [
+        "grammar.rotating-vocal-function-field",
+        "voice.smoke-duet-crossfade"
+      ],
+      "to_ids": [
+        "voice.reed-whisper-low-air",
+        "voice.paper-chorus-unison-shadow"
+      ]
+    },
+    {
+      "id": "relation.slow-tilt-air-fold",
+      "title": "Two tonal homes revealed through a folding air transition",
+      "kind": "relationship",
+      "state": "seeded",
+      "source_ids": [],
+      "path": "relationships/slow-tilt-air-fold.md",
+      "prompt_hint": "",
+      "relation_type": "bridge",
+      "from_ids": [
+        "harmony.two-center-slow-tilt",
+        "sound_source.air-column-fold"
+      ],
+      "to_ids": [
+        "melody.upward-breath-fallaway",
+        "form.slow-ignition-open-exit"
+      ]
+    },
+    {
+      "id": "relation.statement-answer-withdrawal",
+      "title": "Single statement answered by a brief imperfect group, then withdrawn",
+      "kind": "relationship",
+      "state": "sourced",
+      "source_ids": [
+        "archive.web-unesco-alardah-alnajdiyah"
+      ],
+      "path": "relationships/statement-answer-withdrawal.md",
+      "prompt_hint": "",
+      "relation_type": "compatibility",
+      "from_ids": [
+        "grammar.statement-answer-threshold"
+      ],
+      "to_ids": [
+        "voice.paper-chorus-unison-shadow",
+        "voice.smoke-duet-crossfade"
+      ]
+    },
+    {
+      "id": "rhythm.frame-drum-jingle-shadow",
+      "title": "Frame-drum gesture with a jingle shadow",
+      "kind": "rhythm",
+      "state": "SOURCED",
+      "source_ids": [
+        "archive.web-met-dap-frame-drum"
+      ],
+      "path": "rhythm/frame-drum-jingle-shadow.md",
+      "prompt_hint": "dry hand-struck frame-drum pulse, light metallic afterimage, changing jingle density at transitions, open gaps around the melody"
+    },
+    {
+      "id": "rhythm.kendhang-temporal-guidance",
+      "title": "Drum-led temporal and density arc",
+      "kind": "rhythm",
+      "state": "SOURCED",
+      "source_ids": [
+        "archive.web-sumarsam-introduction-javanese-gamelan",
+        "archive.web-sumarsam-theorizing-gamelan"
+      ],
+      "path": "rhythm/kendhang-temporal-guidance.md",
+      "prompt_hint": ""
+    },
+    {
+      "id": "rhythm.qraqeb-steady-metal-grid",
+      "title": "Steady metal grid above a moving low motif",
+      "kind": "rhythm",
+      "state": "SOURCED",
+      "source_ids": [
+        "archive.web-umbc-kapchan-gnawa"
+      ],
+      "path": "rhythm/qraqeb-steady-metal-grid.md",
+      "prompt_hint": ""
+    },
+    {
+      "id": "sound_source.air-column-fold",
+      "title": "Air-column fold",
+      "kind": "sound_source",
+      "state": "draft",
+      "source_ids": [],
+      "path": "sound-sources/air-column-fold.md",
+      "prompt_hint": "folding air column, soft low hollow after phrase ending, dry spacious transition, no vocal pad, no cinematic whoosh"
+    },
+    {
+      "id": "sound_source.bowed-glass-horizon",
+      "title": "Bowed glass horizon",
+      "kind": "sound_source",
+      "state": "draft",
+      "source_ids": [],
+      "path": "sound-sources/bowed-glass-horizon.md",
+      "prompt_hint": "bowed glass friction tone, slow bending pitch horizon, transparent high resonance, long uneven arcs, no lush synth pad"
+    },
+    {
+      "id": "sound_source.breath-granule-rain",
+      "title": "Breath-granule rain",
+      "kind": "sound_source",
+      "state": "draft",
+      "source_ids": [],
+      "path": "sound-sources/breath-granule-rain.md",
+      "prompt_hint": "tiny dry air grains, granular breath percussion, fragile pulse-field, sparse surface texture, no words, no beatboxing, no literal rain"
+    },
+    {
+      "id": "sound_source.charcoal-rub-spark",
+      "title": "Charcoal rub spark",
+      "kind": "sound_source",
+      "state": "draft",
+      "source_ids": [],
+      "path": "sound-sources/charcoal-rub-spark.md",
+      "prompt_hint": "dry charcoal friction, soft granular trail, one brittle high spark, sparse after-phrase detail, no shaker loop"
+    },
+    {
+      "id": "sound_source.magnetic-click-bloom",
+      "title": "Magnetic click bloom",
+      "kind": "sound_source",
+      "state": "draft",
+      "source_ids": [],
+      "path": "sound-sources/magnetic-click-bloom.md",
+      "prompt_hint": "near-field magnetic click, soft unstable metallic bloom, sparse tactile percussion, brief resonant afterimage, no hi-hat pattern"
+    },
+    {
+      "id": "sound_source.wet-wire-tremor",
+      "title": "Wet wire tremor",
+      "kind": "sound_source",
+      "state": "draft",
+      "source_ids": [],
+      "path": "sound-sources/wet-wire-tremor.md",
+      "prompt_hint": "close wet-wire tremor, short unstable pitch smear, low metallic shimmer, rare threshold accent, no hi-hat loop"
+    },
+    {
+      "id": "tradition.aka-polyphony-central-africa",
+      "title": "Aka polyphonic singing â€” bounded vocal context",
+      "kind": "tradition",
+      "state": "verified",
+      "source_ids": [
+        "archive.web-unesco-aka-polyphony"
+      ],
+      "path": "traditions/aka-polyphony-central-africa.md",
+      "prompt_hint": ""
+    },
+    {
+      "id": "tradition.alardah-alnajdiyah",
+      "title": "Alardah Alnajdiyah â€” bounded Saudi performance context",
+      "kind": "tradition",
+      "state": "verified",
+      "source_ids": [
+        "archive.web-unesco-alardah-alnajdiyah"
+      ],
+      "path": "traditions/alardah-alnajdiyah.md",
+      "prompt_hint": ""
+    },
+    {
+      "id": "tradition.central-javanese-gamelan",
+      "title": "Central Javanese gamelan - bounded ensemble context",
+      "kind": "tradition",
+      "state": "VERIFIED",
+      "source_ids": [
+        "archive.web-unesco-gamelan",
+        "archive.web-sumarsam-introduction-javanese-gamelan",
+        "archive.web-sumarsam-theorizing-gamelan"
+      ],
+      "path": "traditions/central-javanese-gamelan.md",
+      "prompt_hint": ""
+    },
+    {
+      "id": "tradition.cuban-son-bounded-context",
+      "title": "Cuban son â€” bounded syncopation context",
+      "kind": "tradition",
+      "state": "reviewed",
+      "source_ids": [
+        "archive.web-smithsonian-cuban-sones"
+      ],
+      "path": "traditions/cuban-son-bounded-context.md",
+      "prompt_hint": ""
+    },
+    {
+      "id": "tradition.ewe-music-ghana",
+      "title": "Ewe music of Ghana â€” bounded ensemble context",
+      "kind": "tradition",
+      "state": "verified",
+      "source_ids": [
+        "archive.web-smithsonian-ewe-music-ghana"
+      ],
+      "path": "traditions/ewe-music-ghana.md",
+      "prompt_hint": ""
+    },
+    {
+      "id": "tradition.gnawa-morocco",
+      "title": "Gnawa in Morocco - bounded context",
+      "kind": "tradition",
+      "state": "VERIFIED",
+      "source_ids": [
+        "archive.web-unesco-gnawa",
+        "archive.web-umbc-kapchan-gnawa",
+        "archive.web-ucla-gnawa"
+      ],
+      "path": "traditions/gnawa-morocco.md",
+      "prompt_hint": ""
+    },
+    {
+      "id": "tradition.indian-tabla-bounded-context",
+      "title": "Indian tabla â€” bounded rhythmic context",
+      "kind": "tradition",
+      "state": "reviewed",
+      "source_ids": [
+        "archive.web-smithsonian-tabla-lessons"
+      ],
+      "path": "traditions/indian-tabla-bounded-context.md",
+      "prompt_hint": ""
+    },
+    {
+      "id": "voice.breathy-octave-ghost",
+      "title": "Breathy octave ghost â€” supporting original cast",
+      "kind": "voice",
+      "state": "draft",
+      "source_ids": [],
+      "path": "voices/breathy-octave-ghost.md",
+      "prompt_hint": "airy octave shadow at phrase ends only, delayed soft entrance, low in mix, no continuous harmony, no choir",
+      "composition_role": "supporting_voice",
+      "register": "high",
+      "density": "single",
+      "energy": "still",
+      "material": "voice",
+      "emotional_tension": "tenderness",
+      "interaction": "shadow"
+    },
+    {
+      "id": "voice.bright-rasp-fragment",
+      "title": "Bright rasp â€” fragment original cast",
+      "kind": "voice",
+      "state": "draft",
+      "source_ids": [],
+      "path": "voices/bright-rasp-fragment.md",
+      "prompt_hint": "bright dry mid-high voice, clipped declarative phrasing, controlled rasp at peaks, clear consonants, no belting, no melisma",
+      "composition_role": "lead_voice",
+      "register": "high_mid",
+      "density": "spare",
+      "energy": "urgent",
+      "material": "voice",
+      "emotional_tension": "defiance",
+      "interaction": "interrupt"
+    },
+    {
+      "id": "voice.ceramic-soprano-fracture",
+      "title": "Ceramic soprano â€” fracture original cast",
+      "kind": "voice",
+      "state": "draft",
+      "source_ids": [],
+      "path": "voices/ceramic-soprano-fracture.md",
+      "prompt_hint": "rare crystalline soprano phrase, fragile break before final note, exposed silence, one image fragment, no operatic vibrato, no choir"
+    },
+    {
+      "id": "voice.elastic-tenor-speech-song",
+      "title": "Elastic tenor â€” speech-song original cast",
+      "kind": "voice",
+      "state": "draft",
+      "source_ids": [],
+      "path": "voices/elastic-tenor-speech-song.md",
+      "prompt_hint": "elastic mid-tenor speech-song verse, rhythmic conversational phrasing, brief melodic lift at line endings, clear diction, rests between phrases, no scat"
+    },
+    {
+      "id": "voice.ember-alto-close-grain",
+      "title": "Ember alto â€” close-grain original cast",
+      "kind": "voice",
+      "state": "draft",
+      "source_ids": [],
+      "path": "voices/ember-alto-close-grain.md",
+      "prompt_hint": "close-grain low alto, dry intimate lead, compact vowels, restrained vibrato, single low harmony only at the lift, no ad-libs, no choir"
+    },
+    {
+      "id": "voice.glass-tenor-suspension",
+      "title": "Glass tenor â€” suspension original cast",
+      "kind": "voice",
+      "state": "draft",
+      "source_ids": [],
+      "path": "voices/glass-tenor-suspension.md",
+      "prompt_hint": "clean upper tenor, instrumental-like entry, suspended phrase endings, light clear tone, restrained emotion, no falsetto acrobatics",
+      "composition_role": "lead_voice",
+      "register": "high_mid",
+      "density": "open",
+      "energy": "rolling",
+      "material": "voice",
+      "emotional_tension": "awe",
+      "interaction": "answer"
+    },
+    {
+      "id": "voice.iron-baritone-percussive-line",
+      "title": "Iron baritone â€” percussive-line original cast",
+      "kind": "voice",
+      "state": "draft",
+      "source_ids": [],
+      "path": "voices/iron-baritone-percussive-line.md",
+      "prompt_hint": "dry percussive baritone, spoken-sung rhythmic line, clipped consonants, sparse octave answer, no rap cadence, no choir"
+    },
+    {
+      "id": "voice.midnight-contralto-horizon",
+      "title": "Midnight contralto â€” horizon original cast",
+      "kind": "voice",
+      "state": "draft",
+      "source_ids": [],
+      "path": "voices/midnight-contralto-horizon.md",
+      "prompt_hint": "low contralto lead, unhurried phrasing, dark clean center, long held vowels, minimal vibrato, spacious final words, no vocal runs",
+      "composition_role": "lead_voice",
+      "register": "low",
+      "density": "open",
+      "energy": "contained",
+      "material": "voice",
+      "emotional_tension": "longing",
+      "interaction": "answer"
+    },
+    {
+      "id": "voice.paper-chorus-unison-shadow",
+      "title": "Paper chorus â€” unison-shadow original cast",
+      "kind": "voice",
+      "state": "draft",
+      "source_ids": [],
+      "path": "voices/paper-chorus-unison-shadow.md",
+      "prompt_hint": "small imperfect unison shadow, staggered late entries, brittle group edge, single sentence only, no gospel choir, no anthem"
+    },
+    {
+      "id": "voice.reed-whisper-low-air",
+      "title": "Reed whisper â€” low-air original cast",
+      "kind": "voice",
+      "state": "draft",
+      "source_ids": [],
+      "path": "voices/reed-whisper-low-air.md",
+      "prompt_hint": "low airy wordless vocal shadow, short inhaled contour, distant dry room, sparse transition texture, no chanting, no vocal pad"
+    },
+    {
+      "id": "voice.silver-falsetto-distance-thread",
+      "title": "Silver falsetto â€” distance-thread original cast",
+      "kind": "voice",
+      "state": "draft",
+      "source_ids": [],
+      "path": "voices/silver-falsetto-distance-thread.md",
+      "prompt_hint": "distant silver falsetto, narrow high melodic thread, clean attacks, breathy phrase endings, minimal double tracking, no belting"
+    },
+    {
+      "id": "voice.smoke-duet-crossfade",
+      "title": "Smoke duet â€” crossfade original cast",
+      "kind": "voice",
+      "state": "draft",
+      "source_ids": [],
+      "path": "voices/smoke-duet-crossfade.md",
+      "prompt_hint": "two intimate contrasting voices, phrase handoff duet, alternating lead lines, one brief unison, no call-and-response chant, no choir"
+    },
+    {
+      "id": "voice.soft-bass-spoken-ember",
+      "title": "Soft bass â€” spoken ember original cast",
+      "kind": "voice",
+      "state": "draft",
+      "source_ids": [],
+      "path": "voices/soft-bass-spoken-ember.md",
+      "prompt_hint": "soft low bass speech-song, warm close breath, precise consonants, narrow range, intimate spoken-melodic line, no growl",
+      "composition_role": "lead_voice",
+      "register": "low",
+      "density": "single",
+      "energy": "contained",
+      "material": "voice",
+      "emotional_tension": "grounded",
+      "interaction": "handoff"
+    },
+    {
+      "id": "voice.split-octave-chorus",
+      "title": "Split-octave chorus â€” original cast behavior",
+      "kind": "voice",
+      "state": "draft",
+      "source_ids": [],
+      "path": "voices/split-octave-chorus.md",
+      "prompt_hint": "low lead vocal with delayed thin octave shadow, call and afterimage, sparse two-register refrain, clear words, no crowd chant, no gospel choir"
+    },
+    {
+      "id": "voice.two-person-unison-break",
+      "title": "Two-person unison break â€” original cast behavior",
+      "kind": "voice",
+      "state": "draft",
+      "source_ids": [],
+      "path": "voices/two-person-unison-break.md",
+      "prompt_hint": "two contrasting original voices, one short unison line, split into answer and held tone, exposed human imperfection, no choir wall",
+      "composition_role": "supporting_voice",
+      "register": "full_spectrum",
+      "density": "spare",
+      "energy": "driving",
+      "material": "voice",
+      "emotional_tension": "defiance",
+      "interaction": "handoff"
+    },
+    {
+      "id": "voice.wordless-breath-texture",
+      "title": "Wordless breath texture â€” original production role",
+      "kind": "voice",
+      "state": "draft",
+      "source_ids": [],
+      "path": "voices/wordless-breath-texture.md",
+      "prompt_hint": "wordless human breath texture, anonymous soft vowel cloud, sparse response layer, no lyrics, no named vocal style"
+    },
+    {
+      "id": "world.breathing-cycles",
+      "title": "Breathing Cycles",
+      "kind": "world",
+      "state": "SEEDED",
+      "source_ids": [
+        "archive.web-sumarsam-introduction-javanese-gamelan",
+        "archive.web-sumarsam-theorizing-gamelan"
+      ],
+      "path": "worlds/breathing-cycles.md",
+      "prompt_hint": ""
+    },
+    {
+      "id": "world.earthwire-open-sky",
+      "title": "Earthwire / Open Sky",
+      "kind": "world",
+      "state": "SEEDED",
+      "source_ids": [
+        "archive.web-umbc-kapchan-gnawa",
+        "archive.web-ucla-gnawa"
+      ],
+      "path": "worlds/earthwire-open-sky.md",
+      "prompt_hint": ""
+    }
+  ]
+}
+
