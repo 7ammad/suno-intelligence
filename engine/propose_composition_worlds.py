@@ -12,7 +12,7 @@ import json
 from collections import defaultdict
 from pathlib import Path
 
-from generate_composition_world import build_world
+from generate_composition_world import build_world, default_catalog_path
 
 
 ROLE_KINDS = ("grammar", "bass", "rhythm", "sound_source", "harmony", "melody", "form")
@@ -128,7 +128,7 @@ def format_world(number: int, world: dict[str, object], args: argparse.Namespace
 def main() -> int:
     root = Path(__file__).resolve().parents[1]
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--catalog", type=Path, default=root / "library" / "catalog.json")
+    parser.add_argument("--catalog", type=Path, default=default_catalog_path(root))
     parser.add_argument("--count", type=int, default=3)
     parser.add_argument("--title-prefix", default="Untitled world")
     parser.add_argument("--tension", default="An original journey that moves from intimate motion toward a clear, earned horizon")
