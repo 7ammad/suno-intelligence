@@ -5,11 +5,11 @@
 Suno already makes it possible to turn a thought into a song. This project asks
 what happens when a creator can also build a durable musical memory: a living
 library of rhythm, bass, instruments, voices, emotional worlds, arrangements,
-and the lessons earned from listening.
+original sound ideas, Suno craft knowledge, and the lessons earned from listening.
 
-This is a public, creator-led proposal and reference implementation plan. It is
-not affiliated with Suno, and it does not reverse engineer or automate Suno's
-consumer interface.
+This is a public, creator-led proposal and working reference implementation. It
+is not affiliated with Suno, and it does not reverse engineer or automate
+Suno's consumer interface.
 
 ## Why this exists
 
@@ -21,11 +21,15 @@ The ambition is a **music intelligence system** that helps a creator:
 
 1. Start from an original impulse, a musical world, a genre/tradition question,
    a user-owned seed, or an abstracted reference study.
-2. Build a specific composition brief instead of a bag of genre tags.
-3. Generate manually in Suno today, or through an official integration if one
-   becomes available.
-4. Keep the track, revise it, or reject it with a short reason.
-5. Turn the selected track into its visual world, hook/short, release plan,
+2. Combine musical roles—rhythm, bass, harmony, melody, form, texture, voice,
+   and lyrics—into a specific composition brief rather than a bag of tags.
+3. Create distinct original voice casts and sound-source roles instead of
+   default generic vocals.
+4. Generate manually in Suno today, using the right feature for creation,
+   editing, voices, Sounds, hooks, cover art, stems, and release assets.
+5. Keep, revise, or reject the candidate with a short reason that improves the
+   next brief.
+6. Turn the selected track into its visual world, hook/short, release plan,
    community conversation, and measured next idea.
 
 The point is not automated content volume. It is a better creative memory.
@@ -34,36 +38,29 @@ The point is not automated content volume. It is a better creative memory.
 
 Two public Suno experiments that informed this project:
 
-- [Nothing Broke â€” candidate 1](https://suno.com/song/c7523f12-36c8-4218-8981-a66b7ebcfcfb)
-- [Nothing Broke â€” candidate 2](https://suno.com/song/0de84576-3ea4-494a-8570-8f1afd05e846)
+- [Nothing Broke — candidate 1](https://suno.com/song/c7523f12-36c8-4218-8981-a66b7ebcfcfb)
+- [Nothing Broke — candidate 2](https://suno.com/song/0de84576-3ea4-494a-8570-8f1afd05e846)
 
 These are not held up as finished releases. They are evidence of the normal
 creator loop: make, listen, name what is missing, and try again.
 
 ## The system
 
-```text
-creative impulse
-  -> music intelligence library
-  -> composition + arrangement brief
-  -> Suno generation or manual session
-  -> listening decision: keep / change / reject
-  -> track record + visual world + hook
-  -> publishing, community, analytics
-  -> bounded learning for the next brief
-```
+creative impulse -> music intelligence library -> composition + arrangement +
+lyric/voice brief -> Suno generation or manual session -> listening decision:
+keep / change / reject -> track record + visual world + hook -> publishing,
+community, analytics -> bounded learning for the next brief
 
-The musical library is the heart. It contains reusable, evidence-aware records
-for musical worlds, rhythm, bass, harmony, melody, instruments, voice,
-production texture, arrangement, and the relationships between them.
+The musical library is the heart. It is an agent-usable semantic model with
+records for musical worlds, rhythm, bass, harmony, melody, instruments, voice
+casts, production texture, original sound sources, arrangement, and the
+relationships between them. Cultural/tradition records carry source pointers
+and explicit boundaries: they inform new composition choices; they are not
+treated as a bag of stereotypes or repertoire to copy.
 
-For example, a creator should be able to begin with a low-end feeling and a
-time-feel, then discover compatible or deliberately contrasting instruments,
-textures, and arrangement arcs. The outcome should be a coherent piece of music
-with its own identityâ€”not an imitation of a named artist.
-
-See [the product proposal](docs/PRODUCT_PROPOSAL.md) and [the creator
-workflow](docs/CREATOR_WORKFLOW.md).
+See [the product proposal](docs/PRODUCT_PROPOSAL.md), [the creator
+workflow](docs/CREATOR_WORKFLOW.md), and the working [Creator Craft
+Guide](engine/CREATOR_CRAFT_GUIDE.md).
 
 ## What we hope Suno enables
 
@@ -95,13 +92,22 @@ manual copying and let a creator's own history become usable creative context.
 
 ## Repository map
 
-- `docs/PRODUCT_PROPOSAL.md` â€” the product thesis and capability model.
-- `docs/CREATOR_WORKFLOW.md` â€” the end-to-end creator journey.
-- `docs/OPEN_QUESTIONS_FOR_SUNO.md` â€” practical questions for the Suno team.
+- docs/PRODUCT_PROPOSAL.md — the product thesis and capability model.
+- docs/CREATOR_WORKFLOW.md — the end-to-end creator journey.
+- docs/OPEN_QUESTIONS_FOR_SUNO.md — practical questions for the Suno team.
+- engine/CREATOR_CRAFT_GUIDE.md — prompt language, lyrics, original voice
+  casting, unwanted-vocal repair, feature choice, and the working music loop.
+- engine/ — the runnable composition-world generator, semantic catalog,
+  brief schema, and append-only trial recorders.
 
 ## Working local prototype
 
-A first local creator console is now included at [`prototype/creator-console.html`](prototype/creator-console.html). It turns a creative seed into a composition brief, a manually attached Suno result, a keep/change/reject decision, content-stage readiness, and portable track/Social Family draft packages. It is intentionally local-first and carries no credentials or live-publish action.
+A first local creator console is now included at
+[prototype/creator-console.html](prototype/creator-console.html). It turns a
+creative seed into a composition brief, a manually attached Suno result, a
+keep/change/reject decision, content-stage readiness, and portable track/Social
+Family draft packages. It is intentionally local-first and carries no
+credentials or live-publish action.
 
 ## A note to the Suno team
 
@@ -111,11 +117,3 @@ remember what we explored, why it worked, how a track evolved, and where to
 take the next one.
 
 If you are interested in talking, please open an issue in this repository.
-
-## Working engine
-
-The project now includes a public-safe working reference engine in
-[`engine/`](engine/): a relationship-based composition-world proposer, a
-Suno-ready brief renderer with original multi-voice casting and artifact controls,
-and append-only listening-evidence capture. It is the actual creative core—not a
-mockup or a provider integration claim.
