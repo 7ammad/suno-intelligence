@@ -54,3 +54,6 @@ Use `python engine/generate_voice_cast.py` to create new semantic original voice
 Use `python engine/generate_sound_source.py` to create an original semantic sound-source role for Suno Sounds or arrangement, from material, gesture, decay, register, and role.
 
 Pass `--brief-dir <folder>` to `propose_composition_worlds.py` to emit a validated canonical brief JSON beside every proposed world.
+
+
+The [Suno Window Workflows](SUNO_WINDOW_WORKFLOWS.md) map every supported manual workflow to its actual current Suno fields and actions, so future Chrome automation follows the same contract rather than inventing a universal prompt form.
