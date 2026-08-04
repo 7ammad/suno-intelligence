@@ -10,6 +10,8 @@ It turns an explicit composition world into a renderer-ready brief without artis
 - lyric behavior plus explicit controls for filler syllables, random `wop-wop`, unwanted ad-libs, and unintelligible vocals;
 - an originality boundary, provenance IDs, and append-only human listening evidence.
 
+Read the [Creator Craft Guide](CREATOR_CRAFT_GUIDE.md) for the full creator path: musical premise -> role-based composition world -> brief -> Suno feature choice -> manual generation -> repair -> reusable learning. It includes prompt language, lyrics, original voice casting, and artifact repair.
+
 `library/semantic-model.json` is the canonical agent contract. It gives every future agent the same music-role vocabulary, combination checks, voice-casting rules, lyric/artifact protocol, and Suno prompt-evidence fields. It is a framework for musical intelligence—not a database of copied melodies, audio, or artist styles.
 
 ## Run it
