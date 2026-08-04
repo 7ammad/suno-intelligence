@@ -127,8 +127,11 @@ def diverse_selection(worlds: list[dict[str, object]], count: int) -> list[dict[
 
 
 def make_brief_args(number: int, world: dict[str, object], args: argparse.Namespace) -> argparse.Namespace:
+    title = f"{args.title_prefix} {number}"
+    if args.title_prefix == "Untitled world":
+        title = str(world["relationship"]["title"])
     return argparse.Namespace(
-        title=f"{args.title_prefix} {number}",
+        title=title,
         tension=args.tension,
         originality=args.originality,
         grammar=world["grammar"]["id"],
