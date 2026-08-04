@@ -97,6 +97,35 @@ def candidates(records: dict[str, dict[str, object]], by_kind: dict[str, list[di
     return sorted(worlds, key=lambda world: int(world["taste_score"]), reverse=True)
 
 
+def diverse_selection(worlds: list[dict[str, object]], count: int) -> list[dict[str, object]]:
+    """Pick a compact batch that explores different musical materials."""
+    remaining = list(worlds)
+    selected: list[dict[str, object]] = []
+    used_ids: set[str] = set()
+    while remaining and len(selected) < count:
+        def value(world: dict[str, object]) -> tuple[int, int]:
+            record_ids = {
+                str(world["grammar"]["id"]), str(world["foundation"]["id"]),
+                str(world["rhythm"]["id"]), str(world["sound"]["id"]),
+                str(world["harmony"]["id"]), str(world["melody"]["id"]),
+                str(world["form"]["id"]), str(world["voice"]["id"]),
+                *(str(record["id"]) for record in world["instruments"]),
+            }
+            overlap = len(record_ids & used_ids)
+            return int(world["taste_score"]) - overlap, -overlap
+        chosen = max(remaining, key=value)
+        selected.append(chosen)
+        used_ids.update({
+            str(chosen["grammar"]["id"]), str(chosen["foundation"]["id"]),
+            str(chosen["rhythm"]["id"]), str(chosen["sound"]["id"]),
+            str(chosen["harmony"]["id"]), str(chosen["melody"]["id"]),
+            str(chosen["form"]["id"]), str(chosen["voice"]["id"]),
+            *(str(record["id"]) for record in chosen["instruments"]),
+        })
+        remaining.remove(chosen)
+    return selected
+
+
 def make_brief_args(number: int, world: dict[str, object], args: argparse.Namespace) -> argparse.Namespace:
     return argparse.Namespace(
         title=f"{args.title_prefix} {number}",
@@ -158,7 +187,7 @@ def main() -> int:
     missing = [kind for kind in (*ROLE_KINDS, "voice", "lyric") if not by_kind[kind]]
     if missing:
         raise ValueError(f"cannot propose worlds; library has no records for: {', '.join(missing)}")
-    proposed = candidates(records, by_kind, taste_scores(args.trials))[:args.count]
+    proposed = diverse_selection(candidates(records, by_kind, taste_scores(args.trials)), args.count)
     if not proposed:
         raise ValueError("cannot propose worlds; add an explicit relationship record")
     rendered = [format_world(number, world, args, records) for number, world in enumerate(proposed, 1)]
